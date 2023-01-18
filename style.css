@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+}
+
+.hero-section {
+  background-color: brown;
+  height: 100px;
+  width: 100%;
+}
+
+.container {
+  width: 20%;
+}
+
+.container img{
+  width: 100%;
+}
