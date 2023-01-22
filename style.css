@@ -1,48 +1,146 @@
 body {
   margin: 0;
+  font-family: 'Nanum Gothic', sans-serif;
 }
+
+.logo{
+  width: 50px;
+  height: 50px;
+  border-radius: 80px;
+  margin-top: -10px;
+}
+
+.nav{
+  display: flex;
+  /* 부모인 nav내부에 center처리를 해야 중앙정렬이된다 */
+  justify-content: center;
+  padding: 10px;
+  /* border: 1px solid red; */
+}
+
+/* nav의 플렉스와 구분해서 영역분리 */
+ul{
+  display: flex;
+  /* border: 1px solid blue; */
+}
+
+/* li앞에 생성되는 특유의 . 제거 */
+li{
+  list-style-type: none;
+  /* 리스트사이의 자간 20px씩 옆으로 띄기 */
+  padding: 20px;
+}
+
 /* 가로정렬완벽하게하기 */
 .row{
   display: flex;
 }
-.row .container:focus,
-.row .container:hover{
-  /* hover시 컨테이너내 요소들1.5배확대 */
-  transform: scale(1.5);
-  /* 무엇이 앞에보여지고 뒤에보여질건지 결정하는 z-index */
-  /* 마우스가 올려지는 이미지는 항상 먼저 보여진다 */
-  z-index: 1;
-}
-
-.hero-section {
-  background-color: brown;
-  height: 100px;
-  width: 100%;
-}
-
 .container {
-  width: 20%;
+  width: 100%;
+  /* position relative가 없을 경우 이미지과도하게 커짐  */
+  position: relative;
+  /* hover했을 때 박스가 부드럽고 천천히 확장되는 효과 */
+  transition: 500ms;
+  display: block;
+  
 }
 /* 컨테이너와 히어로 섹션과 별개로 정확한 이미지사이즈 조정은 
 이미지 섹션내에서만 가능하다 */
 .container img{
   width: 100%;
-  height: 100px;
+  opacity: 1;
+  height: 220px;
+  transition: .5s ease-in-out;
+  border-radius: 10px;
+  display: block;
+}
+.row .container:focus,
+.row .container:hover{
+  transform: scale(1.5);
+  z-index: 1;
 }
 
 /* 갤러리 설명란 배경 */
 .middle{
-background-color: red;
-opacity: 0;
-transition: 0.5 ease;
-position: absolute;
-/* top: 50%;
-transform: translate(-50%,-50%); */
+  /* background-color: red; */
+  transition: .3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  /* 위치 중앙집결하기 */
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .middle{
+  opacity: 1;
 }
 
 /* 갤러리 설명 적을곳 */
 .text{
   color: white;
   font-size: 16px;
-  padding: 16px 32px;
+  page-break-inside: 10px 10px;
+
+}
+
+.footer{
+  width: 100%;
+  /* position: fixed;
+  bottom: 0; */
+  justify-content: center;
+  display: flex;
+ 
+  padding: 30px;
+  /* background-color: wheat; */
+
+}
+
+/* 중간공간 만들고 푸터 이동용으로 설정  */
+.spacer{
+  padding: 60px;
+  background-color: skyblue;
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Nanum Gothic', sans-serif; 
+  border-radius: 10px; 
+}
+
+.poemtext{
+
+  line-height: 20px;
+  color: white;
+  border-radius: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+/* 스크린사이즈 맞춰서 반응형 제작 */
+@media only screen and (max-width:800px) {
+  body{
+    background-color: skyblue;
+
+  }
+
+  .extra-item{
+    display: none;
+  }
+
+  .container{
+    width: 100%;
+  }
+
+  .row .container:focus,
+  .row .container:hover{
+    transform: none;
+    z-index: 1;
+  }
 }
