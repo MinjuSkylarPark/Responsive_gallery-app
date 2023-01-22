@@ -34,6 +34,7 @@ li{
 /* 가로정렬완벽하게하기 */
 .row{
   display: flex;
+  /* flex-wrap: wrap; */
 }
 .container {
   width: 100%;
