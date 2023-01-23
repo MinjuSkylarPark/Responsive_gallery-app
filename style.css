@@ -14,36 +14,34 @@ body {
   display: flex;
   /* 부모인 nav내부에 center처리를 해야 중앙정렬이된다 */
   justify-content: center;
-  padding: 10px;
-  /* border: 1px solid red; */
+  /* padding: 10px; */
 }
 
 /* nav의 플렉스와 구분해서 영역분리 */
 ul{
   display: flex;
-  /* border: 1px solid blue; */
 }
 
 /* li앞에 생성되는 특유의 . 제거 */
 li{
   list-style-type: none;
-  /* 리스트사이의 자간 20px씩 옆으로 띄기 */
   padding: 20px;
 }
-
+/* .hero-section{
+  margin: 0;
+  width: 100%;
+} */
 /* 가로정렬완벽하게하기 */
 .row{
+
   display: flex;
   /* flex-wrap: wrap; */
 }
 .container {
-  width: 100%;
-  /* position relative가 없을 경우 이미지과도하게 커짐  */
+  width: 20%;
   position: relative;
-  /* hover했을 때 박스가 부드럽고 천천히 확장되는 효과 */
-  transition: 500ms;
+  transition: transform 500ms;
   display: block;
-  
 }
 /* 컨테이너와 히어로 섹션과 별개로 정확한 이미지사이즈 조정은 
 이미지 섹션내에서만 가능하다 */
@@ -51,10 +49,10 @@ li{
   width: 100%;
   opacity: 1;
   height: 270px;
-  transition: .5s ease-in-out;
   border-radius: 10px;
   display: block;
 }
+
 .row .container:focus,
 .row .container:hover{
   transform: scale(1.5);
@@ -64,7 +62,7 @@ li{
 /* 갤러리 설명란 배경 */
 .middle{
   /* background-color: red; */
-  transition: .3s ease;
+  /* transition: .3s ease; */
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -84,7 +82,7 @@ li{
 .text{
   color: white;
   font-size: 16px;
-  page-break-inside: 10px 10px;
+  padding: 16px 32px;
 
 }
 
@@ -93,15 +91,13 @@ li{
   /* position: fixed;
   bottom: 0; */
   justify-content: center;
-  display: flex;
- 
+  display: flex; 
   padding: 30px;
-  /* background-color: wheat; */
-
 }
 
 /* 중간공간 만들고 푸터 이동용으로 설정  */
 .spacer{
+  margin: 10px;
   padding: 60px;
   background-color: skyblue;
   width: 100%;
@@ -124,19 +120,33 @@ a{
   color: black;
 }
 
+@media only screen and (max-width:1500px) {
+ .text{
+  font-size: 20px;
+  padding: 32px 16px;
+  text-align: center;
+ }
+
+ /* .footer{
+  position: fixed;
+  bottom: 0;
+ } */
+}
+
 /* 스크린사이즈 맞춰서 반응형 제작 */
 @media only screen and (max-width:800px) {
   body{
     background-color: skyblue;
-
   }
 
   .extra-item{
+    /* 사이즈가 줄어들면 사라지게 */
     display: none;
   }
 
   .container{
     width: 100%;
+    /* height: 100%; */
   }
 
   .row .container:focus,
