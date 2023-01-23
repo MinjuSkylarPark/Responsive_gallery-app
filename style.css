@@ -144,6 +144,11 @@ a{
     display: none;
   }
 
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .container{
     width: 100%;
     /* height: 100%; */
